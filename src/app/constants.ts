@@ -9,7 +9,7 @@ export const PERSON_JSON_LD = {
   jobTitle: 'Frontend Engineer',
   url: SITE_URL,
   email: 'pasha.petrovich98@gmail.com',
-  sameAs: ['https://github.com/themafia98', 'https://linkedin.com/in/pavel-software-anywhere'],
+  sameAs: ['https://github.com/pavel-labs', 'https://linkedin.com/in/pavel-software-anywhere'],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Warsaw',

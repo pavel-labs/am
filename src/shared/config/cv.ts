@@ -23,8 +23,8 @@ export const PERSONAL: Personal = {
     "Building web and mobile products with React, React Native, and TypeScript",
   location: "Warsaw, Poland",
   email: "pasha.petrovich98@gmail.com",
-  github: "themafia98",
-  githubUrl: "https://github.com/themafia98",
+  github: "pavel-labs",
+  githubUrl: "https://github.com/pavel-labs",
   linkedin: "pavel-software-anywhere",
   linkedinUrl: "https://linkedin.com/in/pavel-software-anywhere",
   phone: "+48 516 532 323",
@@ -303,7 +303,7 @@ export const PERSONAL_PROJECTS: PersonalProject[] = [
         url: "https://storybook-production-e655.up.railway.app/",
       },
     ],
-    // githubRepo: 'themafia98/mentara-ai-landing-page',
+    // githubRepo: 'pavel-labs/mentara-ai-landing-page',
     status: ProjectStatus.InProgress,
     tags: [
       "React Native",
@@ -389,7 +389,7 @@ export const PERSONAL_PROJECTS: PersonalProject[] = [
     relatedLinks: [
       {
         label: "Serverless WordPress backend",
-        url: "https://github.com/themafia98/fishing-store-serverless-wp",
+        url: "https://github.com/pavel-labs/fishing-store-serverless-wp",
       },
     ],
     tags: [
@@ -492,11 +492,11 @@ export const SIDE_PROJECTS: PersonalProject[] = [
       "This is a pure learning-and-experiment project: a way to explore how a small game codebase feels when it is structured more like a real indie game project than a casual learning exercise.",
     url: "https://arena-game-2.web.app/",
     status: ProjectStatus.Live,
-    githubRepo: "themafia98/legacy-game-rethinking-2026",
+    githubRepo: "pavel-labs/legacy-game-rethinking-2026",
     relatedLinks: [
       {
         label: "GitHub",
-        url: "https://github.com/themafia98/legacy-game-rethinking-2026",
+        url: "https://github.com/pavel-labs/legacy-game-rethinking-2026",
       },
     ],
     tags: [
@@ -516,9 +516,9 @@ export const SIDE_PROJECTS: PersonalProject[] = [
     description:
       "A small C++ tool built mainly out of curiosity and for personal convenience: convert PDF files into DOCX using Microsoft Word when it is available, with a fallback built-in engine when it is not. " +
       "The idea is simple but practical — avoid opening Word manually for repetitive conversion work while keeping the logic minimal and focused. The project is intentionally lightweight and is more of an exploration than a polished production product.",
-    url: "https://github.com/themafia98/pdf-doc-converter",
+    url: "https://github.com/pavel-labs/pdf-doc-converter",
     status: ProjectStatus.Live,
-    githubRepo: "themafia98/pdf-doc-converter",
+    githubRepo: "pavel-labs/pdf-doc-converter",
     tags: [
       "C++",
       "Windows",
