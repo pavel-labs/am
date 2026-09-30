@@ -18,7 +18,7 @@ export const PERSONAL: Personal = {
   name: "Pavel Piatrovich",
   firstName: "Pavel",
   lastName: "Piatrovich",
-  title: "Frontend Engineer",
+  title: "Frontend Software Engineer",
   subtitle:
     "Building web and mobile products with React, React Native, and TypeScript",
   location: "Warsaw, Poland",
@@ -31,7 +31,7 @@ export const PERSONAL: Personal = {
   currentCompany: "Solbeg_",
   cvPath: "/api/cv-view",
   cvFileName: CV_PDF_FILENAME,
-  summary: `Frontend Engineer with 7+ years of commercial experience building scalable web and
+  summary: `Frontend Software Engineer with 7+ years of commercial experience building scalable web and
     mobile applications with React, React Native, and TypeScript. Strong background in
     component-driven development, modern state management (Redux Toolkit, MobX, Zustand),
     and reusable UI systems with Storybook. Experience as SDET with Playwright. Node.js / Express.js
@@ -58,11 +58,11 @@ export const ABOUT_TAGS: readonly string[] = [
 export const JOBS: Job[] = [
   {
     id: "solbeg",
-    title: "Software Developer - React / React Native",
+    title: "Frontend Software Engineer",
     company: "Solbeg_",
     location: "Warsaw, Poland",
-    period: "Jun 2021 - Present",
-    current: true,
+    period: "Jun 2021 - Jul 2026",
+    current: false,
     summary:
       "React and React Native applications across multiple client projects; also SDET work on Playwright automation.",
     bullets: [

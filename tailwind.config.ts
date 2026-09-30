@@ -1,6 +1,5 @@
 import type { Config } from 'tailwindcss'
 
-/** Colours resolve to CSS variables in globals.css, so both themes share one class set. */
 const token = (name: string) => `rgb(var(--${name}) / <alpha-value>)`
 
 const config: Config = {

@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const alt = 'Pavel Piatrovich - Frontend Engineer'
+export const alt = 'Pavel Piatrovich - Frontend Software Engineer'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -67,7 +67,7 @@ export default function OgImage() {
             fontSize: 24,
           }}
         >
-          <span style={{ color: INK }}>Frontend Engineer</span>
+          <span style={{ color: INK }}>Frontend Software Engineer</span>
           <span style={{ color: FAINT }}>React · React Native · TypeScript</span>
         </div>
       </div>

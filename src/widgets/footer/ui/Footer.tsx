@@ -1,6 +1,5 @@
 import { PERSONAL } from '@/shared/config/cv'
 
-/** Styled after an editor status bar: branch, owner, stack, shortcut. */
 export function Footer() {
   const year = new Date().getFullYear()
 

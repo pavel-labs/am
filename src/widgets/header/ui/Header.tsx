@@ -7,6 +7,7 @@ import { PERSONAL } from '@/shared/config/cv'
 import { NAV_ITEMS } from '@/shared/config/nav'
 import { cn } from '@/shared/lib/cn'
 import { openCommandPalette } from '@/shared/lib/commandPalette'
+import { useActiveSection } from '@/shared/lib/useActiveSection'
 import { ThemeToggle } from '@/shared/ui/ThemeToggle'
 
 function sectionId(href: string): string | null {
@@ -20,7 +21,6 @@ function isNavItemActive(href: string, pathname: string, activeSection: string):
   return pathname === href || pathname.startsWith(`${href}/`)
 }
 
-/** Sections render as paths (`~/about`), pages as routes (`/blog`). */
 function navPath(label: string, href: string): string {
   const name = label.toLowerCase()
   return href.includes('#') ? `~/${name}` : `/${name}`
@@ -28,11 +28,12 @@ function navPath(label: string, href: string): string {
 
 const SECTION_ITEMS = NAV_ITEMS.filter((item) => item.href.includes('#'))
 const PAGE_ITEMS = NAV_ITEMS.filter((item) => !item.href.includes('#'))
+const SECTION_IDS = SECTION_ITEMS.map((item) => sectionId(item.href)).filter((id): id is string => id !== null)
 
 export function Header() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('')
+  const activeSection = useActiveSection(SECTION_IDS, pathname === '/')
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
@@ -41,25 +42,6 @@ export function Header() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  useEffect(() => {
-    if (pathname !== '/') return
-
-    const ids = SECTION_ITEMS.map((item) => sectionId(item.href)).filter((id): id is string => id !== null)
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id)
-        })
-      },
-      { threshold: 0.25 },
-    )
-    ids.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
-    return () => observer.disconnect()
-  }, [pathname])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -98,7 +80,21 @@ export function Header() {
             <span className="text-ink-ghost">:~$</span>
           </Link>
 
-          <nav className="hidden items-center gap-5 lg:flex">
+          {pathname === '/' && (
+            <p className="hidden min-w-0 flex-1 items-center justify-center gap-3 truncate text-[11px] text-ink-faint lg:flex">
+              <span>ssh guest@pavel-portfolio</span>
+              <span className="text-ink-ghost">—</span>
+              <span>zsh</span>
+              <span className="text-ink-ghost">—</span>
+              <span className="tnum">120×40</span>
+              <span className="text-ink-ghost">·</span>
+              <Link href="/blog" className="text-ink transition-colors hover:text-accent">
+                /blog
+              </Link>
+            </p>
+          )}
+
+          <nav className={cn('hidden items-center gap-5', pathname !== '/' && 'lg:flex')}>
             {NAV_ITEMS.map((item) => {
               const isActive = isNavItemActive(item.href, pathname, activeSection)
               return (
@@ -166,7 +162,7 @@ export function Header() {
 
       <div
         className={cn(
-          // dvh + scroll: short phones (iPhone SE) and Safari's toolbar must not clip the contacts.
+          // dvh: Safari's toolbar must not cover the bottom links on short screens
           'fixed inset-x-0 top-0 z-40 flex h-dvh flex-col overflow-y-auto overscroll-contain bg-paper px-6 pt-20 font-mono lg:hidden',
           'pb-[max(2rem,env(safe-area-inset-bottom))] [@media(max-height:700px)]:pt-16',
           'transition-opacity duration-300',

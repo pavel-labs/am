@@ -1,4 +1,4 @@
-import { SectionHeader } from '@/shared/ui'
+import { CommandBlock } from '@/shared/ui'
 import { EducationCard, CertificationCard } from '@/entities/education'
 import { LABEL_CLASS } from '@/shared/ui/constants'
 import type { CvData } from '@/shared/types'
@@ -7,9 +7,7 @@ export function Education({ cv }: { cv: CvData }): React.ReactElement {
   const { educations, certifications, languages } = cv
 
   return (
-    <section id="education" data-reveal className="border-t border-rule py-16 sm:py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        <SectionHeader index="05" title="Education" />
+    <CommandBlock id="education" command="cat education.txt" title="Education & languages">
 
         <div className="grid gap-10 md:grid-cols-2 md:gap-12">
           <div>
@@ -45,7 +43,6 @@ export function Education({ cv }: { cv: CvData }): React.ReactElement {
             ))}
           </dl>
         </div>
-      </div>
-    </section>
+    </CommandBlock>
   )
 }

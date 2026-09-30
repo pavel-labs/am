@@ -3,7 +3,6 @@ import { ArrowUpRightIcon } from '@/shared/ui/icons'
 import { LABEL_CLASS } from '@/shared/ui/constants'
 import type { BlogPost } from '@/shared/types'
 
-/** One row of a directory listing: date, size (reading time), then the file itself. */
 export function PostCard({ post }: { post: BlogPost }): React.ReactElement {
   return (
     <article className="group grid gap-x-8 gap-y-3 border-b border-rule py-7 sm:grid-cols-[9rem_1fr] sm:py-9">

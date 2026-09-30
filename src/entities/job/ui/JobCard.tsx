@@ -6,7 +6,6 @@ import { ProjectCard } from './ProjectCard'
 export function JobCard({ job }: { job: Job }): React.ReactElement {
   return (
     <li className="relative pb-12 pl-6 last:pb-2 sm:pl-10">
-      {/* Commit node on the rail */}
       <span
         aria-hidden
         className={cn(
@@ -17,7 +16,6 @@ export function JobCard({ job }: { job: Job }): React.ReactElement {
         )}
       />
 
-      {/* Dates hang in the left margin on wide screens, above the title on narrow ones */}
       <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 sm:absolute sm:-left-[9.5rem] sm:top-0 sm:mb-0 sm:w-32 sm:flex-col sm:items-start">
         <span className={cn(LABEL_CLASS, 'tnum text-ink')}>{job.period}</span>
         <span className={LABEL_CLASS}>{job.location}</span>

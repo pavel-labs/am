@@ -5,7 +5,7 @@ import { cn } from '@/shared/lib/cn'
 import { getTheme, toggleTheme, THEME_CHANGE_EVENT, type Theme } from '@/shared/lib/theme'
 
 export function ThemeToggle({ className }: { className?: string }): React.ReactElement {
-  // Rendered as "dark" on the server; corrected after mount from <html data-theme>.
+  // server renders "dark"; synced from <html data-theme> after mount
   const [theme, setThemeState] = useState<Theme>('dark')
 
   useEffect(() => {

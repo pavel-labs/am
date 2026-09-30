@@ -1,6 +1,7 @@
 export { Badge } from './Badge'
 export { Button } from './Button'
-export { SectionHeader } from './SectionHeader'
+export { CommandBlock } from './CommandBlock'
+export { Prompt } from './Prompt'
 export { ScrollRevealObserver } from './ScrollRevealObserver'
 export { ArrowUpRightIcon, ArrowDownIcon } from './icons'
 export { ThemeToggle } from './ThemeToggle'

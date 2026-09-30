@@ -1,4 +1,4 @@
-/** Lets any widget open the palette without importing it (widgets stay independent). */
+// an event instead of an import: widgets must not depend on each other (FSD)
 export const OPEN_COMMAND_PALETTE_EVENT = 'open-command-palette'
 
 export function openCommandPalette(): void {

@@ -6,7 +6,7 @@ import { SKILL_DOC_URLS } from '../constants'
 
 export function SkillCategoryCard({ category }: { category: SkillCategory }) {
   return (
-    <div className="grid gap-x-8 gap-y-3 border-b border-rule py-5 sm:grid-cols-[10rem_1fr]">
+    <div className="grid gap-x-8 gap-y-3 border-b border-rule/60 py-4 last:border-0 sm:grid-cols-[10rem_1fr]">
       <h3 className={cn(LABEL_CLASS, 'pt-1 text-ink-soft')}>
         <span className="text-accent">&quot;</span>
         {category.label.toLowerCase()}

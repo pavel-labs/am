@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
- * Tokens are stored as bare RGB channels so Tailwind can apply alpha
- * (`bg-accent/10`). Dark is the default; light is opt-in via data-theme.
- */
+/* RGB channels so Tailwind alpha modifiers work, e.g. bg-accent/10 */
 :root,
 :root[data-theme='dark'] {
   color-scheme: dark;
@@ -51,7 +48,6 @@ html {
 
 body {
   background-color: rgb(var(--paper));
-  /* Dot grid: the page reads as a workspace canvas rather than a sheet of paper */
   background-image: radial-gradient(
     rgb(var(--grid-dot) / var(--grid-alpha)) 1px,
     transparent 1px
@@ -65,7 +61,6 @@ body {
   font-synthesis-weight: none;
 }
 
-/* Soft vignette from the top so the hero sits in a pool of light */
 body::before {
   content: '';
   position: fixed;
@@ -83,7 +78,6 @@ body::before {
   font-variant-numeric: tabular-nums lining-nums;
 }
 
-/* Block caret, as in a terminal prompt */
 .caret::after {
   content: '';
   display: inline-block;
@@ -117,10 +111,34 @@ body::before {
   animation: palette-in 0.16s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Fallback animation hides the overlay if the client bundle never runs */
+.boot-overlay { display: none; }
+html[data-boot] .boot-overlay {
+  display: flex;
+  animation: boot-fallback 0s linear 2.5s forwards;
+}
+html[data-boot] body { overflow: hidden; }
+/* The overlay is inside <main>'s stacking context and can't cover the header */
+html[data-boot] body > header { visibility: hidden; }
+@keyframes boot-fallback {
+  to { opacity: 0; visibility: hidden; }
+}
+
+.block-highlight > h2 {
+  animation: block-highlight 1.4s ease-out;
+}
+@keyframes block-highlight {
+  0%, 30% { background: rgb(var(--accent) / 0.16); box-shadow: -8px 0 0 rgb(var(--accent) / 0.16), 8px 0 0 rgb(var(--accent) / 0.16); }
+  100% { background: transparent; box-shadow: none; }
+}
+
+body:has(#shell) > footer { display: none; }
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .caret::after { animation: none; }
   .palette-in { animation: none; }
+  .block-highlight > h2 { animation: none; }
   html { scroll-behavior: auto; }
 }
 

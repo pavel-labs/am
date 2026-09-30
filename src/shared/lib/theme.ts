@@ -3,10 +3,7 @@ export type Theme = 'dark' | 'light'
 export const THEME_STORAGE_KEY = 'theme'
 export const THEME_CHANGE_EVENT = 'theme-change'
 
-/**
- * Runs in <head> before first paint so the stored theme applies without a
- * flash. Kept as a string because it must not wait for the JS bundle.
- */
+// inline in <head> so the stored theme applies before first paint
 export const THEME_INIT_SCRIPT = `!function(){try{var t=localStorage.getItem('${THEME_STORAGE_KEY}');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}}();`
 
 export function getTheme(): Theme {
@@ -18,7 +15,7 @@ export function setTheme(theme: Theme): void {
   try {
     localStorage.setItem(THEME_STORAGE_KEY, theme)
   } catch {
-    // Storage can be blocked (private mode); the theme still applies for this visit.
+    // storage blocked: the theme still applies for this visit
   }
   window.dispatchEvent(new CustomEvent<Theme>(THEME_CHANGE_EVENT, { detail: theme }))
 }

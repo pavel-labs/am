@@ -1,4 +1,4 @@
-import { SectionHeader, Button } from '@/shared/ui'
+import { CommandBlock, Button } from '@/shared/ui'
 import { ContactCard } from '@/entities/contact'
 import { ContactForm } from './ContactForm'
 import { getFeatures } from '@/shared/api/getFeatures'
@@ -10,9 +10,7 @@ export async function Contact({ cv }: { cv: CvData }) {
   const features = await getFeatures()
 
   return (
-    <section id="contact" data-reveal className="border-t border-rule bg-paper-deep/60 py-16 sm:py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        <SectionHeader index="06" title="Contact" note="ping me" />
+    <CommandBlock id="contact" command="contact --all" title="Contact">
 
         <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
           <div>
@@ -45,7 +43,6 @@ export async function Contact({ cv }: { cv: CvData }) {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+    </CommandBlock>
   )
 }

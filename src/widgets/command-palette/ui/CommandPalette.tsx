@@ -14,11 +14,6 @@ const GROUP_LABELS: Record<Command['group'], string> = {
   links: 'links',
 }
 
-function isTypingTarget(target: EventTarget | null): boolean {
-  if (!(target instanceof HTMLElement)) return false
-  return target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)
-}
-
 export function CommandPalette({ posts }: { posts: readonly PalettePost[] }): React.ReactElement | null {
   const router = useRouter()
   const [open, setOpen] = useState(false)
@@ -51,10 +46,6 @@ export function CommandPalette({ posts }: { posts: readonly PalettePost[] }): Re
         if (open) close()
         else show()
         return
-      }
-      if (!open && e.key === '/' && !isTypingTarget(e.target)) {
-        e.preventDefault()
-        show()
       }
     }
     window.addEventListener('keydown', onKey)
@@ -134,7 +125,7 @@ export function CommandPalette({ posts }: { posts: readonly PalettePost[] }): Re
       e.preventDefault()
       close()
     } else if (e.key === 'Tab') {
-      // The input is the only focus stop inside the dialog.
+      // the input is the only focusable element in the dialog
       e.preventDefault()
     }
   }
