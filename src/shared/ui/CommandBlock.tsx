@@ -12,10 +12,10 @@ interface CommandBlockProps {
 
 export function CommandBlock({ id, command, title, note, className, children }: CommandBlockProps) {
   return (
-    <section id={id} data-reveal className={cn('py-8 sm:py-10', className)}>
+    <section id={id} className={cn('py-8 sm:py-10', className)}>
       <h2 className="flex flex-wrap items-baseline gap-x-2 gap-y-1 font-mono text-[13px] sm:text-sm">
         <Prompt />
-        <span className="text-ink">{command}</span>
+        <span data-typewriter className="text-ink">{command}</span>
         <span className="text-ink-ghost">
           {'# '}
           <span className="text-ink-faint">{title}</span>

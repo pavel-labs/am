@@ -92,15 +92,14 @@ body::before {
   50% { opacity: 0; }
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal.revealed {
-  opacity: 1;
-  transform: none;
+[data-typing]::after {
+  content: '';
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 1px;
+  vertical-align: -0.15em;
+  background: rgb(var(--accent));
 }
 
 @keyframes palette-in {
@@ -115,7 +114,7 @@ body::before {
 .boot-overlay { display: none; }
 html[data-boot] .boot-overlay {
   display: flex;
-  animation: boot-fallback 0s linear 2.5s forwards;
+  animation: boot-fallback 0s linear 4s forwards;
 }
 html[data-boot] body { overflow: hidden; }
 /* The overlay is inside <main>'s stacking context and can't cover the header */
@@ -135,7 +134,6 @@ html[data-boot] body > header { visibility: hidden; }
 body:has(#shell) > footer { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
   .caret::after { animation: none; }
   .palette-in { animation: none; }
   .block-highlight > h2 { animation: none; }

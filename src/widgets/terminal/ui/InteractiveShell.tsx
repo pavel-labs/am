@@ -12,7 +12,7 @@ interface Entry {
   readonly output: React.ReactNode
 }
 
-const CHIPS = ['help', 'whoami', 'experience', 'projects', 'skills', 'cv', 'contact', 'neofetch'] as const
+const CHIPS = ['help', 'experience', 'projects', 'skills', 'cv', 'contact', 'neofetch'] as const
 
 function isTypingTarget(target: EventTarget | null): boolean {
   if (!(target instanceof HTMLElement)) return false

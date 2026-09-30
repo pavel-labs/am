@@ -6,7 +6,6 @@ import { useActiveSection } from '@/shared/lib/useActiveSection'
 
 const WINDOWS = [
   { id: 'shell', label: 'shell' },
-  { id: 'whoami', label: 'whoami' },
   { id: 'about', label: 'about' },
   { id: 'experience', label: 'work' },
   { id: 'skills', label: 'skills' },
@@ -31,9 +30,29 @@ function useClock(): string {
   return time
 }
 
+function useScrollPosition(): string {
+  const [pos, setPos] = useState('Top')
+  useEffect(() => {
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      const pct = max > 0 ? Math.round((window.scrollY / max) * 100) : 0
+      setPos(pct <= 0 ? 'Top' : pct >= 100 ? 'Bot' : `${pct}%`)
+    }
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+    return () => {
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
+    }
+  }, [])
+  return pos
+}
+
 export function StatusBar({ years }: { years: number }): React.ReactElement {
   const active = useActiveSection(IDS)
   const time = useClock()
+  const position = useScrollPosition()
 
   return (
     <nav
@@ -64,6 +83,10 @@ export function StatusBar({ years }: { years: number }): React.ReactElement {
             )
           })}
         </ol>
+
+        <span className="tnum flex w-12 shrink-0 items-center justify-center border-l border-rule text-ink-soft">
+          {position}
+        </span>
 
         <span className="hidden shrink-0 items-center gap-3 border-l border-rule px-3 text-ink-faint sm:flex">
           <span>uptime {years}y+</span>

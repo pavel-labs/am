@@ -1,5 +1,6 @@
 import { Button } from '@/shared/ui'
 import { ArrowDownIcon, ArrowUpRightIcon } from '@/shared/ui/icons'
+import { INLINE_LINK_CLASS } from '@/shared/ui/constants'
 import { headlineStack } from '@/shared/lib/headlineStack'
 import type { CvData } from '@/shared/types'
 
@@ -15,16 +16,17 @@ function loginStamp(date: Date): string {
   })
 }
 
-export function Motd({ cv }: { cv: CvData }): React.ReactElement {
-  const { personal } = cv
-  const stack = headlineStack(cv).join(', ')
+const DT = 'w-[8.5rem] shrink-0 text-ink-faint sm:w-36'
 
-  const facts: Array<[string, string, string?]> = [
-    ['Who', personal.name, 'text-ink'],
-    ['Role', personal.title, 'font-medium text-accent'],
+export function Motd({ cv }: { cv: CvData }): React.ReactElement {
+  const { personal, heroStats } = cv
+  const english = heroStats.find((s) => /english/i.test(s.label))?.value
+
+  const facts: Array<[string, string]> = [
     ['Experience', `${personal.yearsOfExperience}+ years building web & mobile apps`],
-    ['Stack', stack],
+    ['Primary stack', headlineStack(cv).join(', ')],
     ['Location', personal.location],
+    ...(english ? [['English', english] as [string, string]] : []),
   ]
 
   return (
@@ -38,12 +40,26 @@ export function Motd({ cv }: { cv: CvData }): React.ReactElement {
       </p>
 
       <dl className="mt-4 space-y-1 sm:mt-5">
-        {facts.map(([label, value, tone = 'text-ink-soft']) => (
+        <div className="flex gap-3">
+          <dt className={DT}>
+            <span className="text-accent">*</span> Who:
+          </dt>
+          <dd className="min-w-0">
+            <h1 className="font-medium text-ink">{personal.name}</h1>
+          </dd>
+        </div>
+        <div className="flex gap-3">
+          <dt className={DT}>
+            <span className="text-accent">*</span> Role:
+          </dt>
+          <dd className="min-w-0 font-medium text-accent">{personal.title}</dd>
+        </div>
+        {facts.map(([label, value]) => (
           <div key={label} className="flex gap-3">
-            <dt className="w-24 shrink-0 text-ink-faint sm:w-28">
+            <dt className={DT}>
               <span className="text-accent">*</span> {label}:
             </dt>
-            <dd className={`min-w-0 ${tone}`}>{value}</dd>
+            <dd className="min-w-0 text-ink-soft">{value}</dd>
           </div>
         ))}
       </dl>
@@ -53,27 +69,39 @@ export function Motd({ cv }: { cv: CvData }): React.ReactElement {
           variant="primary"
           href="/api/cv-download"
           download={personal.cvFileName}
-          className="col-span-2 justify-center sm:justify-start"
+          className="justify-center gap-2 whitespace-nowrap px-3 sm:justify-start sm:gap-2.5 sm:px-4"
         >
           <ArrowDownIcon />
           download CV
         </Button>
-        <Button variant="ghost" href={`mailto:${personal.email}`} className="justify-center sm:justify-start">
-          email me
-        </Button>
         <Button
           variant="ghost"
-          href={personal.linkedinUrl}
+          href={personal.cvPath}
           target="_blank"
           rel="noopener noreferrer"
-          className="justify-center sm:justify-start"
+          className="justify-center gap-2 whitespace-nowrap px-3 sm:justify-start sm:gap-2.5 sm:px-4"
         >
           <ArrowUpRightIcon />
-          linkedin
+          read online
         </Button>
       </div>
 
-      <p className="mt-4 text-ink-ghost sm:mt-6">Last login: {loginStamp(new Date())}<span className="hidden sm:inline"> from your-browser</span></p>
+      <p className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+        <a href={personal.githubUrl} target="_blank" rel="noopener noreferrer" className={INLINE_LINK_CLASS}>
+          github
+        </a>
+        <a href={personal.linkedinUrl} target="_blank" rel="noopener noreferrer" className={INLINE_LINK_CLASS}>
+          linkedin
+        </a>
+        <a href={`mailto:${personal.email}`} className={INLINE_LINK_CLASS}>
+          email
+        </a>
+      </p>
+
+      <p className="mt-4 text-ink-ghost sm:mt-6">
+        Last login: {loginStamp(new Date())}
+        <span className="hidden sm:inline"> from your-browser</span>
+      </p>
     </header>
   )
 }

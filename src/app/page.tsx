@@ -1,7 +1,7 @@
 import { getCvData } from '@/shared/api/getCvData'
 import { getAllPosts } from '@/shared/lib/posts'
 import { headlineStack } from '@/shared/lib/headlineStack'
-import { Hero } from '@/widgets/hero'
+import { TypewriterObserver } from '@/shared/ui'
 import { About } from '@/widgets/about'
 import { Experience } from '@/widgets/experience'
 import { Skills } from '@/widgets/skills'
@@ -36,10 +36,10 @@ export default async function HomePage() {
   return (
     <>
       <BootSequence />
+      <TypewriterObserver />
       <div className="mx-auto max-w-5xl px-4 pb-16 sm:px-6">
         <Motd cv={cv} />
         <InteractiveShell data={shellData} />
-        <Hero cv={cv} />
         <About cv={cv} />
         <Experience cv={cv} />
         <Skills cv={cv} />

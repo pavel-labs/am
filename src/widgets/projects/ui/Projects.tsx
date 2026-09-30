@@ -15,7 +15,7 @@ export function Projects({ cv }: { cv: CvData }) {
         <div className="mt-12">
           <h3 className="flex flex-wrap items-baseline gap-x-2 font-mono text-[13px] sm:text-sm">
             <Prompt />
-            <span className="text-ink">ls ~/side-projects</span>
+            <span data-typewriter className="text-ink">ls ~/side-projects</span>
             <span className="text-ink-ghost">
               {'# '}
               <span className="text-ink-faint">Experiments & learning</span>

@@ -81,7 +81,7 @@ export const COMMANDS: readonly ShellCommand[] = [
       </div>
     ),
   },
-  jump('whoami', 'whoami', 'Who I am'),
+  jump('whoami', 'top', 'Who I am'),
   jump('about', 'about', 'About'),
   jump('experience', 'experience', 'Work experience', ['work', 'jobs']),
   jump('skills', 'skills', 'Skills & tech stack', ['stack']),
@@ -362,7 +362,7 @@ function Neofetch({ data }: { data: ShellData }) {
     ['role', data.title],
     ['location', data.location],
     ['uptime', `${data.years}+ years in frontend`],
-    ['stack', data.stack.join(', ')],
+    ['primary stack', data.stack.join(', ')],
     ['latest', current ? `${current.title} @ ${current.company}` : '—'],
     ['projects', data.projects.map((p) => p.name).join(', ')],
     ['contact', data.email],

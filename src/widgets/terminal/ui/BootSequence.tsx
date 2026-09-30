@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import { BOOT_LINES, BOOT_STORAGE_KEY } from '../model/boot'
 
-const STEP_MS = 85
-const HOLD_MS = 200
+const STEP_MS = 140
+const HOLD_MS = 700
 
 function finish() {
   delete document.documentElement.dataset.boot

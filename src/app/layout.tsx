@@ -7,7 +7,6 @@ import { Header } from '@/widgets/header'
 import { Footer } from '@/widgets/footer'
 import { CommandPalette } from '@/widgets/command-palette'
 import { BOOT_INIT_SCRIPT } from '@/widgets/terminal'
-import { ClientOnlyWidgets } from '@/shared/ui/ClientOnlyWidgets'
 import { getAllPosts } from '@/shared/lib/posts'
 import { THEME_INIT_SCRIPT } from '@/shared/lib/theme'
 import { PERSON_JSON_LD, SITE_URL } from './constants'
@@ -90,7 +89,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }} />
       </head>
       <body className="bg-paper font-sans text-ink antialiased">
-        <ClientOnlyWidgets />
         <CommandPalette posts={posts} />
         <Header />
         <main className="relative z-10">{children}</main>

@@ -35,8 +35,9 @@ export const PERSONAL: Personal = {
     mobile applications with React, React Native, and TypeScript. Strong background in
     component-driven development, modern state management (Redux Toolkit, MobX, Zustand),
     and reusable UI systems with Storybook. Experience as SDET with Playwright. Node.js / Express.js
-    background from personal projects, with interest in expanding into backend (NestJS, GraphQL).
-    Delivers features end to end in cross-functional Agile teams.`,
+    background from personal projects, with interest in expanding into backend development with Node.js (NestJS).
+    Strong interest in AI-powered products and AI-assisted engineering workflows, with hands-on
+    experience building full-stack apps. Delivers features end to end in cross-functional Agile teams.`,
   yearsOfExperience: 7,
 };
 
@@ -53,6 +54,7 @@ export const ABOUT_TAGS: readonly string[] = [
   "Micro-frontends",
   "Feature-Sliced Design",
   "Responsive Design",
+  "AI-assisted engineering",
 ];
 
 export const JOBS: Job[] = [
@@ -64,12 +66,13 @@ export const JOBS: Job[] = [
     period: "Jun 2021 - Jul 2026",
     current: false,
     summary:
-      "React and React Native applications across multiple client projects; also SDET work on Playwright automation.",
+      "Developed and delivered production web and mobile apps with React, React Native, TypeScript, and Expo across multiple client projects. Contributed to frontend architecture and technical direction: reusable UI systems, performance work, component-driven development, and automated testing with Playwright.",
     bullets: [
-      "Build and maintain scalable web and mobile apps with React, React Native (Expo SDK), and TypeScript; reusable, well-typed components following a component-driven approach.",
-      "Collaborate with cross-functional distributed teams (backend, design, QA, PM): code reviews, Agile ceremonies, frontend estimation, async communication workflows.",
+      "Built and maintained scalable web and mobile apps with React, React Native (Expo SDK), and TypeScript; reusable, well-typed components following a component-driven approach.",
+      "Collaborated with cross-functional distributed teams (backend, design, QA, PM): code reviews, Agile ceremonies, frontend estimation, async communication workflows.",
       "Proposed and introduced code review guidelines and best practices adopted team-wide.",
-      "Work as SDET: design and maintain automated end-to-end testing infrastructure with Playwright, improving regression coverage and release confidence.",
+      "Integrated REST APIs and implemented complex asynchronous data flows.",
+      "Worked as SDET: designed and maintained automated end-to-end testing infrastructure with Playwright, improving regression coverage and release confidence.",
     ],
     projects: [
       {
@@ -91,50 +94,54 @@ export const JOBS: Job[] = [
         ],
       },
       {
-        name: "Horse Racing Betting App - Cordova (iOS) & Web",
+        name: "Horse Racing Betting App - Cordova (iOS) & Web | SDET",
         tech: "React · Apache Cordova · Playwright",
         highlights: [
-          "Maintained and extended React-based components for a cross-platform betting app (iOS via Cordova and Web), ensuring stability and consistency across platforms.",
-          "Integrated and configured Cordova plugins, working with iOS-specific capabilities.",
-          "Built and maintained Playwright E2E automation, increasing regression coverage of key user flows.",
+          "Developed and maintained React-based UI components for a cross-platform horse racing betting application targeting Web and iOS via Cordova, supporting 3+ white-label brands.",
+          "Integrated and configured Cordova plugins, including iOS-specific functionality and platform integrations.",
+          "Rebuilt Playwright E2E test automation from scratch, bringing critical betting and user flows to near-full test case coverage and improving release confidence.",
         ],
       },
       {
-        name: "Insurance Agent Portal",
+        name: "Insurance Agent Portal - Web",
         tech: "React · Micro Frontends · Redux",
         highlights: [
-          "Developed React components and feature modules within a micro-frontend architecture.",
-          "Improved codebase stability and maintainability through unit and integration testing.",
-          "Integrated REST APIs and managed application state with Redux.",
+          "Developed reusable React components and feature modules within a micro-frontend architecture.",
+          "Integrated REST APIs and implemented application state management using Redux.",
+          "Improved application stability and maintainability through unit and integration testing.",
+          "Collaborated with cross-functional teams to deliver features in an Agile environment.",
         ],
       },
       {
         name: "Transport & Logistics App",
-        tech: "React Native",
+        tech: "React Native · Azure DevOps",
         highlights: [
-          "Built UI components for two React Native applications targeting managers and drivers in the transportation sector.",
-          "Improved application stability by resolving defects and supporting consistent release quality across both apps.",
+          "Developed reusable UI components for two React Native applications used by logistics managers and drivers.",
+          "Improved stability by resolving defects and supporting release quality across both apps.",
+          "Used Azure DevOps for day-to-day development: task tracking, repositories, and pull request reviews.",
         ],
       },
     ],
   },
   {
     id: "freelance",
-    title: "Frontend Developer - React",
-    company: "Freelance / Self-Initiated",
+    title: "Frontend Engineer",
+    company: "Freelance / Self-Employed",
     location: "Remote",
-    period: "Apr 2020 - Dec 2021",
+    period: "Apr 2020 - Dec 2021 (part-time)",
     current: false,
     summary:
       "React app built around the Google Maps API in collaboration with backend developers, designers, and stakeholders; also a static Next.js site as a sub-project.",
     bullets: [
+      "Built interactive maps and location-based functionality with the Google Maps API.",
       "Cooperated closely with backend developers to define API contracts and integrate REST endpoints.",
+      "Integrated cryptocurrency transactions into the application, connecting the payment flows in the UI to backend services.",
       "Worked independently on feature delivery, API integration, and responsive UI.",
     ],
   },
   {
     id: "itertech",
-    title: "Frontend Developer",
+    title: "Frontend Engineer",
     company: "IterTech Innovations",
     location: "Minsk, Belarus",
     period: "Sep 2019 - Jun 2021",
@@ -142,7 +149,7 @@ export const JOBS: Job[] = [
     summary:
       "ERP solution for a large enterprise client; migrated class-based components to hooks and functional components. Also contributed to a Next.js sub-project.",
     bullets: [
-      "Built reusable UI components and maintained Storybook-based UI systems.",
+      "Built reusable UI components and helped introduce Storybook for component development.",
       "Wrote unit tests with Jest and Enzyme to keep the codebase stable and regression-free.",
       "Worked on performance and scalability: bundle size, rendering, and asset optimization.",
     ],
@@ -215,6 +222,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       "Postman",
       "Swagger",
       "CI/CD (GitHub Actions, CircleCI, Bitbucket)",
+      "Azure DevOps",
       "GCP",
       "Git",
     ],
@@ -278,6 +286,11 @@ export const CONTACT_ITEMS: ContactItem[] = [
     label: "LinkedIn",
     value: "linkedin.com/in/pavel-software-anywhere",
     href: "https://linkedin.com/in/pavel-software-anywhere",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/pavel-labs",
+    href: "https://github.com/pavel-labs",
   },
   {
     label: "WhatsApp",
