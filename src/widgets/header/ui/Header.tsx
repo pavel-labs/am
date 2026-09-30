@@ -86,7 +86,7 @@ export function Header() {
               <span className="text-ink-ghost">—</span>
               <span>zsh</span>
               <span className="text-ink-ghost">—</span>
-              <span className="tnum">120×40</span>
+              <span className="text-ink-soft">best dev on this server</span>
               <span className="text-ink-ghost">·</span>
               <Link href="/blog" className="text-ink transition-colors hover:text-accent">
                 /blog
