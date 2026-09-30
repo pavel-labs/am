@@ -1,11 +1,12 @@
 import { BadgeVariant } from '@/shared/types'
 
 /**
- * Tags are deliberately monochrome - the page carries one accent colour and it
- * belongs to links, not to a nine-colour taxonomy of technologies. The variant
- * map is kept so cv.ts keeps compiling without touching content.
+ * Tags stay monochrome - amber is reserved for state (active, current, hover)
+ * and does not become a nine-colour taxonomy of technologies. The variant map
+ * is kept so cv.ts keeps compiling without touching content.
  */
-const TAG_STYLE = 'border-rule bg-transparent text-ink-soft hover:border-ink hover:text-ink'
+const TAG_STYLE =
+  'border-rule bg-paper-card/60 text-ink-soft hover:border-accent/60 hover:text-accent'
 
 export const BADGE_VARIANT_STYLES: Record<BadgeVariant, string> = {
   [BadgeVariant.Default]: TAG_STYLE,
@@ -20,12 +21,17 @@ export const BADGE_VARIANT_STYLES: Record<BadgeVariant, string> = {
 }
 
 export const BUTTON_VARIANT_STYLES = {
-  primary: 'bg-ink text-paper border border-ink hover:bg-accent hover:border-accent',
-  ghost: 'border border-rule text-ink hover:border-ink bg-transparent',
+  primary:
+    'border border-accent bg-accent text-accent-on hover:bg-accent-soft hover:border-accent-soft',
+  ghost:
+    'border border-rule bg-paper-card/60 text-ink hover:border-accent/60 hover:text-accent',
 } as const
 
 export type ButtonVariant = keyof typeof BUTTON_VARIANT_STYLES
 
-/** Small letterspaced caps used for every meta label on the page. */
-export const LABEL_CLASS =
-  'text-[10px] sm:text-[11px] uppercase tracking-label text-ink-faint'
+/** Small mono label used for every meta line on the page. */
+export const LABEL_CLASS = 'font-mono text-[11px] tracking-label text-ink-faint'
+
+/** Underlined inline link in mono, used for secondary links across widgets. */
+export const INLINE_LINK_CLASS =
+  'font-mono text-sm text-ink-soft underline decoration-rule underline-offset-4 transition-colors hover:text-accent hover:decoration-accent'

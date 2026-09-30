@@ -1,4 +1,5 @@
 import { SectionHeader } from '@/shared/ui'
+import { LABEL_CLASS } from '@/shared/ui/constants'
 import type { CvData } from '@/shared/types'
 
 export function About({ cv }: { cv: CvData }): React.ReactElement {
@@ -10,21 +11,24 @@ export function About({ cv }: { cv: CvData }): React.ReactElement {
         <SectionHeader index="01" title="About" note={`${personal.yearsOfExperience}+ years`} />
 
         <div className="grid gap-10 lg:grid-cols-[1fr_16rem] lg:gap-16">
-          {/* Lead paragraph, set large with a drop-cap opening */}
-          <p className="max-w-measure font-display text-2xl leading-[1.35] sm:text-[1.75rem] first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-[3.75rem] first-letter:leading-[0.8] first-letter:text-accent">
+          <p className="max-w-measure text-xl leading-[1.55] text-ink sm:text-[1.4rem]">
             {personal.summary}
           </p>
 
-          <ul className="flex flex-col self-start border-t border-rule">
-            {aboutTags.map((tag) => (
-              <li
-                key={tag}
-                className="border-b border-rule py-2.5 text-sm text-ink-soft transition-colors hover:text-ink"
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
+          <div className="self-start">
+            <p className={`${LABEL_CLASS} mb-3`}>principles.txt</p>
+            <ul className="flex flex-col border-l border-rule font-mono text-[13px]">
+              {aboutTags.map((tag) => (
+                <li
+                  key={tag}
+                  className="group flex gap-3 py-1.5 pl-4 text-ink-soft transition-colors hover:text-ink"
+                >
+                  <span aria-hidden className="text-ink-ghost group-hover:text-accent">-</span>
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

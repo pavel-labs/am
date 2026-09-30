@@ -1,13 +1,16 @@
-import type { Metadata } from 'next'
-import { preconnect, prefetchDNS } from 'react-dom'
+import type { Metadata, Viewport } from 'next'
+import { prefetchDNS } from 'react-dom'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { Header } from '@/widgets/header'
 import { Footer } from '@/widgets/footer'
+import { CommandPalette } from '@/widgets/command-palette'
 import { ClientOnlyWidgets } from '@/shared/ui/ClientOnlyWidgets'
+import { getAllPosts } from '@/shared/lib/posts'
+import { THEME_INIT_SCRIPT } from '@/shared/lib/theme'
 import { PERSON_JSON_LD, SITE_URL } from './constants'
-import { displaySerif, inter } from './fonts'
+import { mono, sans } from './fonts'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -54,15 +57,28 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#0b0c0e' },
+    { media: '(prefers-color-scheme: light)', color: '#f3f2ee' },
+  ],
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  preconnect('https://fonts.googleapis.com')
-  preconnect('https://fonts.gstatic.com', { crossOrigin: 'anonymous' })
   prefetchDNS('https://linkedin.com')
   prefetchDNS('https://wa.me')
 
+  const posts = getAllPosts().map(({ slug, title }) => ({ slug, title }))
+
   return (
-    <html lang="en" className={`${displaySerif.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      data-theme="dark"
+      suppressHydrationWarning
+      className={`${sans.variable} ${mono.variable}`}
+    >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_JSON_LD) }}
@@ -74,6 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-paper font-sans text-ink antialiased">
         <ClientOnlyWidgets />
+        <CommandPalette posts={posts} />
         <Header />
         <main className="relative z-10">{children}</main>
         <Footer />

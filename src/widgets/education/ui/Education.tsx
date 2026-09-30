@@ -13,8 +13,8 @@ export function Education({ cv }: { cv: CvData }): React.ReactElement {
 
         <div className="grid gap-10 md:grid-cols-2 md:gap-12">
           <div>
-            <h3 className={`${LABEL_CLASS} mb-4`}>Degree</h3>
-            <div className="border-t border-ink">
+            <h3 className={`${LABEL_CLASS} mb-4`}>./degree</h3>
+            <div className="border-t border-rule">
               {educations.map((edu) => (
                 <EducationCard key={edu.degree} edu={edu} />
               ))}
@@ -22,8 +22,8 @@ export function Education({ cv }: { cv: CvData }): React.ReactElement {
           </div>
 
           <div>
-            <h3 className={`${LABEL_CLASS} mb-4`}>Certifications</h3>
-            <div className="border-t border-ink">
+            <h3 className={`${LABEL_CLASS} mb-4`}>./certifications</h3>
+            <div className="border-t border-rule">
               {certifications.map((cert) => (
                 <CertificationCard key={cert.name} cert={cert} />
               ))}
@@ -32,15 +32,15 @@ export function Education({ cv }: { cv: CvData }): React.ReactElement {
         </div>
 
         <div className="mt-12 sm:mt-16">
-          <h3 className={`${LABEL_CLASS} mb-4`}>Languages</h3>
-          <dl className="max-w-xl border-t border-ink">
+          <h3 className={`${LABEL_CLASS} mb-4`}>./languages</h3>
+          <dl className="max-w-xl border-t border-rule">
             {languages.map((lang) => (
               <div
                 key={lang.name}
                 className="flex items-baseline justify-between gap-6 border-b border-rule py-3.5"
               >
-                <dt className="font-display text-xl">{lang.name}</dt>
-                <dd className="text-sm text-ink-faint">{lang.level}</dd>
+                <dt className="text-lg font-medium">{lang.name}</dt>
+                <dd className="font-mono text-[12px] text-ink-faint">{lang.level}</dd>
               </div>
             ))}
           </dl>

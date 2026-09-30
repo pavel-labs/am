@@ -22,13 +22,16 @@ export default function BlogPage() {
   return (
     <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
       <div className="mb-10 flex items-center gap-5 sm:mb-14">
-        <span className={LABEL_CLASS}>Portfolio</span>
+        <span className={LABEL_CLASS}>
+          <span className="text-accent">~</span> <span className="text-ink-ghost">$</span>{' '}
+          <span className="text-ink-soft">ls ./blog</span>
+        </span>
         <span className="h-px flex-1 bg-rule" />
-        <span className={LABEL_CLASS}>{posts.length} posts</span>
+        <span className={LABEL_CLASS}>{posts.length} files</span>
       </div>
 
-      <h1 className="font-display text-[2.75rem] leading-[0.9] tracking-[-0.015em] sm:text-7xl">
-        Blog
+      <h1 className="text-[2.75rem] font-semibold leading-[0.9] tracking-[-0.045em] sm:text-7xl">
+        Blog<span className="text-accent">.</span>
       </h1>
       <p className="mt-6 max-w-measure text-lg leading-relaxed text-ink-soft">
         Notes on React, TypeScript, and shipping frontend systems - written between client work.

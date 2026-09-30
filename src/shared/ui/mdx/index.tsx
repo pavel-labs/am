@@ -6,12 +6,14 @@ const BODY_TEXT = 'text-[17px] leading-relaxed text-ink-soft'
 /** Article typography - one entry per element the markdown can produce. */
 const components: MDXComponents = {
   h2: ({ children, ...props }) => (
-    <h2 className="max-w-measure pt-2 font-display text-3xl leading-tight sm:text-4xl" {...props}>
+    <h2 className="max-w-measure pt-4 text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-4xl" {...props}>
+      <span aria-hidden className="mr-3 font-mono text-[0.6em] font-normal text-accent">##</span>
       {children}
     </h2>
   ),
   h3: ({ children, ...props }) => (
-    <h3 className="max-w-measure pt-1 font-display text-2xl leading-tight sm:text-3xl" {...props}>
+    <h3 className="max-w-measure pt-2 text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-[1.65rem]" {...props}>
+      <span aria-hidden className="mr-3 font-mono text-[0.6em] font-normal text-ink-ghost">###</span>
       {children}
     </h3>
   ),
@@ -33,22 +35,22 @@ const components: MDXComponents = {
   ),
   li: ({ children, ...props }) => (
     <li className={cn('pl-5 -indent-5', BODY_TEXT)} {...props}>
-      <span aria-hidden className="mr-2 text-ink-ghost">
-        —
+      <span aria-hidden className="mr-2 font-mono text-accent/70">
+        -
       </span>
       {children}
     </li>
   ),
   blockquote: ({ children, ...props }) => (
     <blockquote
-      className="max-w-measure border-l-2 border-accent pl-6 [&>p]:max-w-none [&>p]:font-display [&>p]:text-xl [&>p]:italic [&>p]:leading-snug [&>p]:text-ink sm:[&>p]:text-2xl"
+      className="max-w-measure border-l-2 border-accent bg-accent/5 py-3 pl-6 pr-4 [&>p]:max-w-none [&>p]:text-xl [&>p]:leading-snug [&>p]:text-ink sm:[&>p]:text-[1.35rem]"
       {...props}
     >
       {children}
     </blockquote>
   ),
   pre: ({ children, ...props }) => (
-    <pre className="overflow-x-auto border border-rule bg-paper-card p-5" {...props}>
+    <pre className="overflow-x-auto border border-rule border-t-accent/60 bg-paper-card p-5 [&>code]:border-0 [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-[13px] [&>code]:text-ink-soft" {...props}>
       {children}
     </pre>
   ),
@@ -59,7 +61,7 @@ const components: MDXComponents = {
         className={cn(
           className,
           'font-mono leading-relaxed text-ink-soft',
-          isBlock ? 'text-[13px]' : 'text-[0.9em]',
+          isBlock ? 'text-[13px]' : 'border border-rule bg-paper-card px-1.5 py-0.5 text-[0.85em] text-accent',
         )}
         {...props}
       >
@@ -69,7 +71,7 @@ const components: MDXComponents = {
     )
   },
   a: ({ children, ...props }) => (
-    <a className="text-accent underline underline-offset-4 hover:text-ink" {...props}>
+    <a className="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent" {...props}>
       {children}
     </a>
   ),
@@ -79,7 +81,7 @@ const components: MDXComponents = {
     </strong>
   ),
   em: ({ children, ...props }) => (
-    <em className="font-display italic text-accent" {...props}>
+    <em className="italic text-ink" {...props}>
       {children}
     </em>
   ),

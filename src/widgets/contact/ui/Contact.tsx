@@ -10,20 +10,19 @@ export async function Contact({ cv }: { cv: CvData }) {
   const features = await getFeatures()
 
   return (
-    <section id="contact" data-reveal className="border-t border-rule bg-paper-deep py-16 sm:py-24">
+    <section id="contact" data-reveal className="border-t border-rule bg-paper-deep/60 py-16 sm:py-24">
       <div className="mx-auto max-w-5xl px-6">
-        <SectionHeader index="06" title="Contact" />
+        <SectionHeader index="06" title="Contact" note="ping me" />
 
         <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
           <div>
-            <p className="max-w-measure font-display text-3xl leading-[1.15] sm:text-4xl">
-              Let&apos;s build something{' '}
-              <span className="italic text-accent">great together.</span>
+            <p className="max-w-measure text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-4xl">
+              Say hello<span className="text-accent">_</span>
             </p>
             <p className="mt-6 max-w-measure leading-relaxed text-ink-soft">
-              Open to interesting frontend challenges, collaborative teams, and B2B contracts.
-              Product companies, startups, or ambitious side projects — if clean code and great
-              UX matter to you, let&apos;s talk.
+              Always happy to talk React, React Native, TypeScript, UI systems and side projects.
+              Got a question about something I wrote, an idea to bounce around, or just want to
+              connect — drop a line.
             </p>
 
             <div className="mt-8">
@@ -31,15 +30,15 @@ export async function Contact({ cv }: { cv: CvData }) {
                 <ContactForm />
               ) : (
                 <Button variant="primary" href={`mailto:${personal.email}`}>
-                  Get in touch
+                  get in touch
                 </Button>
               )}
             </div>
           </div>
 
           <div>
-            <h3 className={`${LABEL_CLASS} mb-4`}>Elsewhere</h3>
-            <div className="border-t border-ink">
+            <h3 className={`${LABEL_CLASS} mb-4`}>./elsewhere</h3>
+            <div className="border-t border-rule">
               {contactItems.map((item) => (
                 <ContactCard key={item.label} item={item} />
               ))}

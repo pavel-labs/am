@@ -5,49 +5,57 @@ import { ProjectCard } from './ProjectCard'
 
 export function JobCard({ job }: { job: Job }): React.ReactElement {
   return (
-    <article className="grid gap-x-8 gap-y-4 border-b border-rule py-8 sm:grid-cols-[9rem_1fr] sm:py-10">
-      {/* Left margin column: dates, place, status - the way a printed CV sets them */}
-      <div className="flex flex-col gap-1">
+    <li className="relative pb-12 pl-6 last:pb-2 sm:pl-10">
+      {/* Commit node on the rail */}
+      <span
+        aria-hidden
+        className={cn(
+          'absolute -left-[5px] top-1.5 h-[9px] w-[9px] rounded-full border',
+          job.current
+            ? 'border-accent bg-accent shadow-[0_0_0_4px_rgb(var(--accent)/0.15)]'
+            : 'border-ink-ghost bg-paper',
+        )}
+      />
+
+      {/* Dates hang in the left margin on wide screens, above the title on narrow ones */}
+      <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 sm:absolute sm:-left-[9.5rem] sm:top-0 sm:mb-0 sm:w-32 sm:flex-col sm:items-start">
         <span className={cn(LABEL_CLASS, 'tnum text-ink')}>{job.period}</span>
         <span className={LABEL_CLASS}>{job.location}</span>
         {job.current && (
-          <span className="mt-1 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-label text-accent">
-            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
-            Current
+          <span className="border border-accent/50 px-1.5 py-0.5 font-mono text-[10px] text-accent">
+            HEAD → current
           </span>
         )}
       </div>
 
-      <div>
-        <h3 className="font-display text-2xl leading-tight sm:text-3xl">{job.title}</h3>
-        <p className="mt-1 text-sm text-ink-soft">{job.company}</p>
+      <h3 className="text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-3xl">
+        {job.title}
+      </h3>
+      <p className="mt-1 font-mono text-[13px] text-accent">@{job.company}</p>
 
-        {job.summary && (
-          <p className="mt-4 max-w-measure font-display text-lg italic leading-snug text-ink-soft">
-            {job.summary}
-          </p>
-        )}
+      {job.summary && (
+        <p className="mt-4 max-w-measure text-lg leading-snug text-ink-soft">{job.summary}</p>
+      )}
 
-        <ul className="mt-5 max-w-measure space-y-2.5">
-          {job.bullets.map((bullet, i) => (
-            <li key={i} className="pl-5 -indent-5 text-[15px] leading-relaxed text-ink-soft">
-              <span aria-hidden className="mr-2 text-ink-ghost">—</span>
-              {bullet}
-            </li>
-          ))}
-        </ul>
+      <ul className="mt-5 max-w-measure space-y-2.5">
+        {job.bullets.map((bullet, i) => (
+          <li key={i} className="flex gap-3 text-[15px] leading-relaxed text-ink-soft">
+            <span aria-hidden className="mt-[3px] font-mono text-xs text-ink-ghost">+</span>
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
 
-        {job.projects && (
-          <div className="mt-7">
-            <p className={cn(LABEL_CLASS, 'mb-3')}>Key projects</p>
-            <div className="border-t border-rule">
-              {job.projects.map((project) => (
-                <ProjectCard key={project.name} project={project} />
-              ))}
-            </div>
+      {job.projects && (
+        <div className="mt-7">
+          <p className={cn(LABEL_CLASS, 'mb-3')}>./projects</p>
+          <div className="space-y-3">
+            {job.projects.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
           </div>
-        )}
-      </div>
-    </article>
+        </div>
+      )}
+    </li>
   )
 }

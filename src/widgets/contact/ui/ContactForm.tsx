@@ -5,7 +5,7 @@ import { useFormStatus } from 'react-dom'
 import { cn } from '@/shared/lib/cn'
 import { ContactStatus, contactInitialState } from '@/shared/types'
 import { sendContact } from '@/shared/api/sendContact'
-import { CONTACT_INPUT_CLASS } from '../constants'
+import { CONTACT_INPUT_CLASS, CONTACT_LABEL_CLASS } from '../constants'
 
 function SubmitButton(): React.ReactElement {
   const { pending } = useFormStatus()
@@ -14,14 +14,14 @@ function SubmitButton(): React.ReactElement {
       type="submit"
       disabled={pending}
       className={cn(
-        'self-start inline-flex items-center gap-2.5 px-5 py-3',
-        'border border-ink bg-ink text-paper',
-        'text-[11px] uppercase tracking-label transition-colors duration-200',
-        'hover:border-accent hover:bg-accent',
+        'self-start inline-flex items-center gap-2.5 px-4 py-2.5',
+        'border border-accent bg-accent text-accent-on',
+        'font-mono text-[13px] transition-colors duration-150',
+        'hover:border-accent-soft hover:bg-accent-soft',
         'disabled:cursor-not-allowed disabled:opacity-40',
       )}
     >
-      {pending ? 'Sending…' : 'Send message'}
+      {pending ? 'sending…' : '$ send --message'}
     </button>
   )
 }
@@ -31,9 +31,9 @@ export function ContactForm(): React.ReactElement {
 
   if (state.status === ContactStatus.Success) {
     return (
-      <div className="flex flex-col gap-2 border-t border-ink pt-5">
-        <span className="text-[11px] uppercase tracking-label text-accent">Message sent</span>
-        <p className="font-display text-xl">Thanks — I&apos;ll get back to you soon.</p>
+      <div className="flex flex-col gap-2 border border-rule bg-paper-card/60 p-5">
+        <span className="font-mono text-[12px] text-accent">✓ 200 OK — message sent</span>
+        <p className="text-lg">Thanks — I&apos;ll get back to you soon.</p>
       </div>
     )
   }
@@ -42,7 +42,7 @@ export function ContactForm(): React.ReactElement {
     <form action={action} className="flex flex-col gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-1">
-          <label className="text-[11px] uppercase tracking-label text-ink-faint">Name</label>
+          <label className={CONTACT_LABEL_CLASS}>--name</label>
           <input
             name="name"
             type="text"
@@ -53,7 +53,7 @@ export function ContactForm(): React.ReactElement {
           />
         </div>
         <div className="flex flex-col gap-1">
-          <label className="text-[11px] uppercase tracking-label text-ink-faint">Email</label>
+          <label className={CONTACT_LABEL_CLASS}>--email</label>
           <input
             name="email"
             type="email"
@@ -65,10 +65,10 @@ export function ContactForm(): React.ReactElement {
       </div>
 
       <div className="flex flex-col gap-1">
-        <label className="text-[11px] uppercase tracking-label text-ink-faint">Message</label>
+        <label className={CONTACT_LABEL_CLASS}>--message</label>
         <textarea
           name="message"
-          placeholder="Tell me about your project or opportunity…"
+          placeholder="Say hi, share an idea or a link…"
           required
           minLength={10}
           maxLength={2000}

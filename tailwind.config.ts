@@ -1,5 +1,8 @@
 import type { Config } from 'tailwindcss'
 
+/** Colours resolve to CSS variables in globals.css, so both themes share one class set. */
+const token = (name: string) => `rgb(var(--${name}) / <alpha-value>)`
+
 const config: Config = {
   content: [
     './src/*.{ts,tsx}',
@@ -12,35 +15,37 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'serif'],
+        display: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {
         paper: {
-          DEFAULT: '#f2efe8',
-          deep: '#eae5db',
-          card: '#f7f5f0',
+          DEFAULT: token('paper'),
+          deep: token('paper-deep'),
+          card: token('paper-card'),
         },
         ink: {
-          DEFAULT: '#16150f',
-          soft: '#4b473d',
-          faint: '#7d786c',
-          ghost: '#a8a294',
+          DEFAULT: token('ink'),
+          soft: token('ink-soft'),
+          faint: token('ink-faint'),
+          ghost: token('ink-ghost'),
         },
         rule: {
-          DEFAULT: '#d5cfc1',
-          soft: '#e2ddd1',
+          DEFAULT: token('rule'),
+          soft: token('rule-soft'),
         },
         accent: {
-          DEFAULT: '#9c3b1c',
-          soft: '#bf5a33',
+          DEFAULT: token('accent'),
+          soft: token('accent-soft'),
+          on: token('on-accent'),
         },
       },
       letterSpacing: {
-        label: '0.14em',
+        label: '0.08em',
       },
       maxWidth: {
-        measure: '62ch',
+        measure: '64ch',
       },
     },
   },

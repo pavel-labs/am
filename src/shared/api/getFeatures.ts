@@ -2,12 +2,10 @@ import { logger } from '@/shared/lib/logger'
 
 export interface Features {
   contactForm: boolean
-  openToWork: boolean
 }
 
 const defaults: Features = {
   contactForm: false,
-  openToWork: true,
 }
 
 export async function getFeatures(): Promise<Features> {
@@ -15,7 +13,6 @@ export async function getFeatures(): Promise<Features> {
     return {
       ...defaults,
       contactForm: process.env.FEATURE_CONTACT_FORM === 'true',
-      openToWork: process.env.FEATURE_OPEN_TO_WORK === 'true',
     }
   }
 
