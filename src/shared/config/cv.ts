@@ -28,7 +28,7 @@ export const PERSONAL: Personal = {
   linkedin: "pavel-software-anywhere",
   linkedinUrl: "https://linkedin.com/in/pavel-software-anywhere",
   phone: "+48 516 532 323",
-  currentCompany: "Solbeg_",
+  currentCompany: "GB2B - GamingB2B",
   cvPath: "/api/cv-view",
   cvFileName: CV_PDF_FILENAME,
   summary: `Frontend Software Engineer with 7+ years of commercial experience building scalable web and
@@ -58,6 +58,18 @@ export const ABOUT_TAGS: readonly string[] = [
 ];
 
 export const JOBS: Job[] = [
+  {
+    id: "gamingb2b",
+    title: "Senior Frontend Developer",
+    company: "GB2B - GamingB2B",
+    location: "Warsaw, Poland",
+    period: "Oct 2026 - Present",
+    current: true,
+    bullets: [
+      "Developing a web iGaming platform using React.",
+      "Building the platform's companion mobile application using React Native.",
+    ],
+  },
   {
     id: "solbeg",
     title: "Frontend Software Engineer",
