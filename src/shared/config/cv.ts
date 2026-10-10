@@ -18,7 +18,7 @@ export const PERSONAL: Personal = {
   name: "Pavel Piatrovich",
   firstName: "Pavel",
   lastName: "Piatrovich",
-  title: "Frontend Software Engineer",
+  title: "Senior Frontend Developer",
   subtitle:
     "Building web and mobile products with React, React Native, and TypeScript",
   location: "Warsaw, Poland",
@@ -31,13 +31,9 @@ export const PERSONAL: Personal = {
   currentCompany: "GB2B - GamingB2B",
   cvPath: "/api/cv-view",
   cvFileName: CV_PDF_FILENAME,
-  summary: `Frontend Software Engineer with 7+ years of commercial experience building scalable web and
-    mobile applications with React, React Native, and TypeScript. Strong background in
-    component-driven development, modern state management (Redux Toolkit, MobX, Zustand),
-    and reusable UI systems with Storybook. Experience as SDET with Playwright. Node.js / Express.js
-    background from personal projects, with interest in expanding into backend development with Node.js (NestJS).
-    Strong interest in AI-powered products and AI-assisted engineering workflows, with hands-on
-    experience building full-stack apps. Delivers features end to end in cross-functional Agile teams.`,
+  summary: `Senior Frontend Developer with 7+ years of commercial experience building web and mobile
+    applications with React, React Native, and TypeScript. Experienced in frontend architecture,
+    white-label UI systems, component-driven development with Storybook, and Playwright E2E automation.`,
   yearsOfExperience: 7,
 };
 
@@ -49,12 +45,10 @@ export const HERO_STATS: Stat[] = [
 export const ABOUT_TAGS: readonly string[] = [
   "Component-Driven Dev",
   "TypeScript-first",
-  "Agile / Scrum",
-  "SOLID · DRY · KISS",
+  "White-label UI",
   "Micro-frontends",
-  "Feature-Sliced Design",
-  "Responsive Design",
-  "AI-assisted engineering",
+  "Playwright E2E",
+  "Agile / Scrum",
 ];
 
 export const JOBS: Job[] = [
@@ -77,50 +71,39 @@ export const JOBS: Job[] = [
     period: "Jun 2021 - Jul 2026",
     current: false,
     summary:
-      "Developed and delivered production web and mobile apps with React, React Native, TypeScript, and Expo across multiple client projects. Contributed to frontend architecture and technical direction: reusable UI systems, performance work, component-driven development, and automated testing with Playwright.",
+      "Delivered React and React Native applications across betting, insurance, and logistics projects, contributing to frontend architecture, reusable UI systems, and automated testing.",
     bullets: [
-      "Built and maintained scalable web and mobile apps with React, React Native (Expo SDK), and TypeScript; reusable, well-typed components following a component-driven approach.",
-      "Collaborated with cross-functional distributed teams (backend, design, QA, PM): code reviews, Agile ceremonies, frontend estimation, async communication workflows.",
-      "Proposed and introduced code review guidelines and best practices adopted team-wide.",
-      "Integrated REST APIs and implemented complex asynchronous data flows.",
-      "Worked as SDET: designed and maintained automated end-to-end testing infrastructure with Playwright, improving regression coverage and release confidence.",
+      "Introduced code review guidelines and frontend best practices adopted team-wide.",
     ],
     projects: [
       {
         name: "Horse Racing Betting App - Cross-Platform",
         tech: "React Native · Expo SDK · Storybook",
         highlights: [
-          "Drove architectural decisions and built a React Native application from scratch; independently designed and implemented a scalable UI Kit supporting white-label configurations and dark/light themes with a focus on maintainability, reusability, and performance optimization.",
-          "Applied Component-Driven Development using Storybook to develop and maintain reusable components; collaborated on cross-platform delivery (iOS, Android, Web via Expo).",
-          "Improved performance and unit test coverage for a maintainable, reliable codebase.",
+          "Built a React Native application from scratch and independently designed its UI Kit with white-label configuration and dark/light themes.",
+          "Developed reusable components with Storybook for cross-platform delivery on iOS, Android, and Web via Expo.",
         ],
       },
       {
         name: "Betting Services Admin Panel - Web",
         tech: "React",
         highlights: [
-          "Developed and maintained a web-based admin panel for managing betting services.",
-          "Implemented new features, resolved issues, and adapted existing components for an upcoming UI redesign.",
-          "Collaborated closely with backend and QA teams in an Agile workflow.",
+          "Implemented admin features for betting services and adapted existing React components for a planned UI redesign.",
         ],
       },
       {
         name: "Horse Racing Betting App - Cordova (iOS) & Web | SDET",
         tech: "React · Apache Cordova · Playwright",
         highlights: [
-          "Developed and maintained React-based UI components for a cross-platform horse racing betting application targeting Web and iOS via Cordova, supporting 3+ white-label brands.",
-          "Integrated and configured Cordova plugins, including iOS-specific functionality and platform integrations.",
-          "Rebuilt Playwright E2E test automation from scratch, bringing critical betting and user flows to near-full test case coverage and improving release confidence.",
+          "Developed React UI and integrated iOS-specific Cordova plugins for a betting app supporting Web, iOS, and 3+ white-label brands.",
+          "Rebuilt Playwright E2E automation from scratch to cover critical betting and user flows.",
         ],
       },
       {
         name: "Insurance Agent Portal - Web",
         tech: "React · Micro Frontends · Redux",
         highlights: [
-          "Developed reusable React components and feature modules within a micro-frontend architecture.",
-          "Integrated REST APIs and implemented application state management using Redux.",
-          "Improved application stability and maintainability through unit and integration testing.",
-          "Collaborated with cross-functional teams to deliver features in an Agile environment.",
+          "Built reusable React components and feature modules in a micro-frontend architecture, integrating REST APIs and Redux state management.",
         ],
       },
       {
@@ -128,8 +111,6 @@ export const JOBS: Job[] = [
         tech: "React Native · Azure DevOps",
         highlights: [
           "Developed reusable UI components for two React Native applications used by logistics managers and drivers.",
-          "Improved stability by resolving defects and supporting release quality across both apps.",
-          "Used Azure DevOps for day-to-day development: task tracking, repositories, and pull request reviews.",
         ],
       },
     ],
@@ -142,12 +123,11 @@ export const JOBS: Job[] = [
     period: "Apr 2020 - Dec 2021 (part-time)",
     current: false,
     summary:
-      "React app built around the Google Maps API in collaboration with backend developers, designers, and stakeholders; also a static Next.js site as a sub-project.",
+      "Delivered a React application with Google Maps integration and a static Next.js site.",
     bullets: [
       "Built interactive maps and location-based functionality with the Google Maps API.",
-      "Cooperated closely with backend developers to define API contracts and integrate REST endpoints.",
+      "Defined API contracts with backend developers and integrated REST endpoints.",
       "Integrated cryptocurrency transactions into the application, connecting the payment flows in the UI to backend services.",
-      "Worked independently on feature delivery, API integration, and responsive UI.",
     ],
   },
   {
@@ -158,11 +138,10 @@ export const JOBS: Job[] = [
     period: "Sep 2019 - Jun 2021",
     current: false,
     summary:
-      "ERP solution for a large enterprise client; migrated class-based components to hooks and functional components. Also contributed to a Next.js sub-project.",
+      "Developed an enterprise ERP frontend and contributed to a Next.js sub-project.",
     bullets: [
-      "Built reusable UI components and helped introduce Storybook for component development.",
-      "Wrote unit tests with Jest and Enzyme to keep the codebase stable and regression-free.",
-      "Worked on performance and scalability: bundle size, rendering, and asset optimization.",
+      "Migrated class-based React components to hooks and functional components; built reusable UI and helped introduce Storybook.",
+      "Wrote unit tests with Jest and Enzyme and worked on bundle size, rendering, and asset optimization.",
     ],
   },
 ];
@@ -180,8 +159,6 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       "React",
       "React Native (Expo SDK)",
       "Next.js (SSR/SSG/ISR)",
-      "Node.js",
-      "Apache Cordova",
     ],
   },
   {
@@ -192,11 +169,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       "MobX",
       "Zustand",
       "TanStack React Query",
-      "Apollo GraphQL",
       "REST",
       "WebSockets",
       "React Hook Form",
-      "Formik",
       "Zod",
     ],
   },
@@ -204,13 +179,11 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     label: "UI & Styling",
     color: BadgeVariant.Pink,
     skills: [
+      "Storybook",
       "Material UI",
-      "Fluent UI",
       "Tailwind CSS",
       "SCSS",
       "CSS Modules",
-      "Styled-Components",
-      "Storybook",
     ],
   },
   {
@@ -222,31 +195,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     label: "Build & Tooling",
     color: BadgeVariant.Yellow,
     skills: [
+      "Git",
       "Vite",
       "Webpack",
-      "Babel",
       "ESLint",
       "Prettier",
       "Monorepo (Turborepo, Nx)",
-      "Docker",
-      "Firebase",
-      "Postman",
-      "Swagger",
       "CI/CD (GitHub Actions, CircleCI, Bitbucket)",
-      "Azure DevOps",
-      "GCP",
-      "Git",
     ],
-  },
-  {
-    label: "CMS",
-    color: BadgeVariant.Green,
-    skills: ["WordPress", "Contentful"],
-  },
-  {
-    label: "AI Dev Tools",
-    color: BadgeVariant.Teal,
-    skills: ["Claude Code", "GitHub Copilot", "Codex"],
   },
   {
     label: "Practices",
@@ -255,12 +211,6 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       "Component-Driven Development",
       "Feature-Sliced Design",
       "Micro-frontends",
-      "MVVM",
-      "MVC",
-      "Design Patterns",
-      "Performance Optimization",
-      "Responsive Design",
-      "Agile/Scrum",
     ],
   },
 ];
@@ -313,13 +263,11 @@ export const CONTACT_ITEMS: ContactItem[] = [
 export const PERSONAL_PROJECTS: PersonalProject[] = [
   {
     name: "Mentara",
-    tagline: "AI Mock Interview Training - Multi-Agent System",
+    tagline: "AI Interview Practice for Web & Mobile",
     description:
-      "Full-stack AI interview-training app (Expo/React Native + Fastify) powered by 3 orchestrated " +
-      "LLM agents, with real-time token streaming over WebSocket for live interview conversations. " +
-      "Adding voice input (speech-to-text) and voice output (text-to-speech) for a hands-free mode, " +
-      "backed by a type-safe shared contract (TypeScript + Zod) across REST/WS. Planned launch " +
-      "across all target platforms by the end of 2026.",
+      "Building an AI interview-practice app with Expo/React Native and Fastify for Web, iOS, and Android. " +
+      "The system orchestrates 3 LLM agents, streams responses over WebSockets, and shares " +
+      "TypeScript/Zod contracts across the client and backend.",
     url: "https://mentara-ai-landing.web.app/",
     relatedLinks: [
       {

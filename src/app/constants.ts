@@ -6,7 +6,7 @@ export const PERSON_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Pavel Piatrovich',
-  jobTitle: 'Frontend Software Engineer',
+  jobTitle: 'Senior Frontend Developer',
   url: SITE_URL,
   email: 'pasha.petrovich98@gmail.com',
   sameAs: ['https://github.com/pavel-labs', 'https://linkedin.com/in/pavel-software-anywhere'],
