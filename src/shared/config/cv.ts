@@ -66,8 +66,7 @@ export const JOBS: Job[] = [
     period: "Oct 2026 - Present",
     current: true,
     bullets: [
-      "Developing a web iGaming platform using React.",
-      "Building the platform's companion mobile application using React Native.",
+      "Developing iGaming platform apps using React (Web) and React Native (iOS, Android).",
     ],
   },
   {
