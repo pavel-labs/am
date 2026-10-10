@@ -2,7 +2,6 @@ import { Button } from '@/shared/ui'
 import { ArrowDownIcon, ArrowUpRightIcon } from '@/shared/ui/icons'
 import { INLINE_LINK_CLASS } from '@/shared/ui/constants'
 import { headlineStack } from '@/shared/lib/headlineStack'
-import { CV_ATS_PDF_FILENAME } from '@/shared/config/cv-pdf'
 import type { CvData } from '@/shared/types'
 
 function loginStamp(date: Date): string {
@@ -96,9 +95,6 @@ export function Motd({ cv }: { cv: CvData }): React.ReactElement {
         </a>
         <a href={`mailto:${personal.email}`} className={INLINE_LINK_CLASS}>
           email
-        </a>
-        <a href={`/${CV_ATS_PDF_FILENAME}`} download={CV_ATS_PDF_FILENAME} className={INLINE_LINK_CLASS}>
-          CV without photo
         </a>
       </p>
 

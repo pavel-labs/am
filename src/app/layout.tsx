@@ -14,11 +14,11 @@ import { mono, sans } from './fonts'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Pavel Piatrovich - Senior Frontend Developer',
+  title: 'Pavel Piatrovich - Frontend Software Engineer',
   description:
-    'Senior Frontend Developer with 7+ years of experience specialising in React, React Native, and TypeScript. Based in Warsaw, Poland.',
+    'Frontend Software Engineer with 7+ years of experience specialising in React, React Native, and TypeScript. Based in Warsaw, Poland.',
   keywords: [
-    'Senior Frontend Developer',
+    'Frontend Software Engineer',
     'React Developer',
     'React Native',
     'TypeScript',
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   category: 'technology',
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: 'Pavel Piatrovich - Senior Frontend Developer',
+    title: 'Pavel Piatrovich - Frontend Software Engineer',
     description:
-      'Senior Frontend Developer with 7+ years of experience specialising in React, React Native, and TypeScript.',
+      'Frontend Software Engineer with 7+ years of experience specialising in React, React Native, and TypeScript.',
     type: 'website',
     url: SITE_URL,
     siteName: 'Pavel Piatrovich Portfolio',
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Pavel Piatrovich - Senior Frontend Developer',
+        alt: 'Pavel Piatrovich - Frontend Software Engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pavel Piatrovich - Senior Frontend Developer',
-    description: 'Senior Frontend Developer · React · React Native · TypeScript · Warsaw',
+    title: 'Pavel Piatrovich - Frontend Software Engineer',
+    description: 'Frontend Software Engineer · React · React Native · TypeScript · Warsaw',
     images: ['/opengraph-image'],
   },
   robots: { index: true, follow: true },

@@ -18,7 +18,7 @@ export const PERSONAL: Personal = {
   name: "Pavel Piatrovich",
   firstName: "Pavel",
   lastName: "Piatrovich",
-  title: "Senior Frontend Developer",
+  title: "Frontend Software Engineer",
   subtitle:
     "Building web and mobile products with React, React Native, and TypeScript",
   location: "Warsaw, Poland",
@@ -28,14 +28,14 @@ export const PERSONAL: Personal = {
   linkedin: "pavel-software-anywhere",
   linkedinUrl: "https://linkedin.com/in/pavel-software-anywhere",
   phone: "+48 516 532 323",
-  currentCompany: "GB2B - GamingB2B",
+  currentCompany: "Solbeg_",
   cvPath: "/api/cv-view",
   cvFileName: CV_PDF_FILENAME,
-  summary: `Senior Frontend Developer with 7+ years of commercial experience building scalable web and
+  summary: `Frontend Software Engineer with 7+ years of commercial experience building scalable web and
     mobile applications with React, React Native, and TypeScript. Strong background in
     component-driven development, modern state management (Redux Toolkit, MobX, Zustand),
-    and reusable UI systems with Storybook. Experience as SDET with Playwright. Hands-on Node.js / Express.js
-    experience from personal projects.
+    and reusable UI systems with Storybook. Experience as SDET with Playwright. Node.js / Express.js
+    background from personal projects, with interest in expanding into backend development with Node.js (NestJS).
     Strong interest in AI-powered products and AI-assisted engineering workflows, with hands-on
     experience building full-stack apps. Delivers features end to end in cross-functional Agile teams.`,
   yearsOfExperience: 7,
@@ -58,17 +58,6 @@ export const ABOUT_TAGS: readonly string[] = [
 ];
 
 export const JOBS: Job[] = [
-  {
-    id: "gamingb2b",
-    title: "Senior Frontend Developer",
-    company: "GB2B - GamingB2B",
-    location: "Warsaw, Poland",
-    period: "Oct 2026 - Present",
-    current: true,
-    bullets: [
-      "Developing iGaming platform apps using React (Web) and React Native (iOS, Android).",
-    ],
-  },
   {
     id: "solbeg",
     title: "Frontend Software Engineer",
@@ -110,7 +99,7 @@ export const JOBS: Job[] = [
         highlights: [
           "Developed and maintained React-based UI components for a cross-platform horse racing betting application targeting Web and iOS via Cordova, supporting 3+ white-label brands.",
           "Integrated and configured Cordova plugins, including iOS-specific functionality and platform integrations.",
-          "Rebuilt Playwright E2E test automation from scratch to cover critical betting and user flows, supporting regression testing and release confidence.",
+          "Rebuilt Playwright E2E test automation from scratch, bringing critical betting and user flows to near-full test case coverage and improving release confidence.",
         ],
       },
       {

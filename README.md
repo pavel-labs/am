@@ -1,6 +1,6 @@
 # Pavel Piatrovich - Portfolio
 
-Personal portfolio and CV site for Pavel Piatrovich, Senior Frontend Developer with 7+ years of experience in React, React Native, and TypeScript. Built as a static Next.js app - fully server-rendered, print-ready, and deployable to Vercel in one click.
+Personal portfolio and CV site for Pavel Piatrovich, Frontend Engineer with 6+ years of experience in React, React Native, and TypeScript. Built as a static Next.js app - fully server-rendered, print-ready, and deployable to Vercel in one click.
 
 ---
 
@@ -73,9 +73,7 @@ Node >= 20 required (see `engines` in `package.json`).
 
 ## CV PDF
 
-The main CV is `public/pavel-piatrovich-cv.pdf`. The existing download and online-view buttons serve it through `/api/cv-download` and `/api/cv-view`.
-
-The photo-free version for application forms is `public/pavel-piatrovich-cv-ats.pdf`, linked as "CV without photo". Both versions use a single-column layout with selectable text and clickable contact links. Keep both PDFs in sync with `src/shared/config/cv.ts` when updating the CV.
+Drop the PDF at `public/pavel-piatrovich-cv.pdf` - the "Download CV" and "View CV" buttons in the Hero point to it automatically via `PERSONAL.cvPath` in `shared/config/cv.ts`.
 
 ---
 
