@@ -75,6 +75,8 @@ Node >= 20 required (see `engines` in `package.json`).
 
 Drop the PDF at `public/pavel-piatrovich-cv.pdf` - the "Download CV" and "View CV" buttons in the Hero point to it automatically via `PERSONAL.cvPath` in `shared/config/cv.ts`.
 
+The optional photo-free copy is `public/pavel-piatrovich-cv-no-photo.pdf`. The "CV without photo" links open `/api/cv-view?variant=no-photo` and download `/api/cv-download?variant=no-photo`. Keep its text identical to the main CV; only the photo and header layout differ.
+
 ---
 
 ## Updating Content

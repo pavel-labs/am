@@ -1,21 +1,23 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
-import { CV_PDF_FILENAME } from '@/shared/config/cv-pdf'
+import { cvPdfFilename } from '@/shared/config/cv-pdf'
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
+  const fileName = cvPdfFilename(req.nextUrl.searchParams.get('variant'))
+
   try {
-    const filePath = join(process.cwd(), 'public', CV_PDF_FILENAME)
+    const filePath = join(process.cwd(), 'public', fileName)
     const buffer = await readFile(filePath)
 
     return new NextResponse(buffer, {
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': 'inline',
+        'Content-Disposition': `inline; filename="${fileName}"`,
         'Cache-Control': 'public, max-age=86400',
       },
     })
   } catch {
-    return NextResponse.redirect(new URL(`/${CV_PDF_FILENAME}`, req.url))
+    return NextResponse.redirect(new URL(`/${fileName}`, req.url))
   }
 }

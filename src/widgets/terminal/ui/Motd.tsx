@@ -2,6 +2,7 @@ import { Button } from '@/shared/ui'
 import { ArrowDownIcon, ArrowUpRightIcon } from '@/shared/ui/icons'
 import { INLINE_LINK_CLASS } from '@/shared/ui/constants'
 import { headlineStack } from '@/shared/lib/headlineStack'
+import { CV_NO_PHOTO_PDF_FILENAME } from '@/shared/config/cv-pdf'
 import type { CvData } from '@/shared/types'
 
 function loginStamp(date: Date): string {
@@ -85,6 +86,27 @@ export function Motd({ cv }: { cv: CvData }): React.ReactElement {
           read online
         </Button>
       </div>
+
+      <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+        <span className="text-ink-faint">CV without photo:</span>
+        <a
+          href="/api/cv-view?variant=no-photo"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Read CV without photo"
+          className={INLINE_LINK_CLASS}
+        >
+          read online
+        </a>
+        <a
+          href="/api/cv-download?variant=no-photo"
+          download={CV_NO_PHOTO_PDF_FILENAME}
+          aria-label="Download CV without photo"
+          className={INLINE_LINK_CLASS}
+        >
+          download
+        </a>
+      </p>
 
       <p className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
         <a href={personal.githubUrl} target="_blank" rel="noopener noreferrer" className={INLINE_LINK_CLASS}>
