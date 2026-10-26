@@ -320,7 +320,7 @@ export const PERSONAL_PROJECTS: PersonalProject[] = [
       "Adding voice input (speech-to-text) and voice output (text-to-speech) for a hands-free mode, " +
       "backed by a type-safe shared contract (TypeScript + Zod) across REST/WS. Planned launch " +
       "across all target platforms by the end of 2026.",
-    url: "https://mentarika.app/#main",
+    url: "https://mentarika.app/",
     relatedLinks: [
       {
         label: "Storybook",
