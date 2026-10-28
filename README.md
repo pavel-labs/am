@@ -1,6 +1,6 @@
 # Pavel Piatrovich - Portfolio
 
-Personal portfolio and CV site for Pavel Piatrovich, Frontend Engineer with 6+ years of experience in React, React Native, and TypeScript. Built as a static Next.js app - fully server-rendered, print-ready, and deployable to Vercel in one click.
+Personal portfolio and CV site for Pavel Piatrovich, Frontend Engineer with 7+ years of experience in React, React Native, and TypeScript. Built as a static Next.js app - fully server-rendered, print-ready, and deployable to Vercel in one click.
 
 ---
 

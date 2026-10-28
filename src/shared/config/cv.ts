@@ -312,22 +312,23 @@ export const CONTACT_ITEMS: ContactItem[] = [
 
 export const PERSONAL_PROJECTS: PersonalProject[] = [
   {
-    name: "Mentara",
-    tagline: "AI Mock Interview Training - Multi-Agent System",
+    name: "Mentarika",
+    tagline: "AI Technical Interview Practice & Coding Assessments",
     description:
-      "Full-stack AI interview-training app (Expo/React Native + Fastify) powered by 3 orchestrated " +
-      "LLM agents, with real-time token streaming over WebSocket for live interview conversations. " +
-      "Adding voice input (speech-to-text) and voice output (text-to-speech) for a hands-free mode, " +
-      "backed by a type-safe shared contract (TypeScript + Zod) across REST/WS. Planned launch " +
-      "across all target platforms by the end of 2026.",
+      "A product for developers to practice technical interviews, complete coding assessments, and get feedback, " +
+      "with a separate Enterprise offering for teams. The product includes a React Native app and a Fastify " +
+      "backend, with a localized marketing site at mentarika.app.",
     url: "https://mentarika.app/",
     relatedLinks: [
       {
         label: "Storybook",
         url: "https://storybook-production-e655.up.railway.app/",
       },
+      {
+        label: "GitHub",
+        url: "https://github.com/pavel-labs/mentarika-ai-landing-page",
+      },
     ],
-    // githubRepo: 'pavel-labs/mentara-ai-landing-page',
     status: ProjectStatus.InProgress,
     tags: [
       "React Native",
@@ -351,7 +352,7 @@ export const PERSONAL_PROJECTS: PersonalProject[] = [
           "React Native · Expo",
           "Clerk Auth",
           "REST + WebSocket",
-          "Voice I/O (in progress)",
+          "Interview practice and coding assessments",
         ],
       },
       {
@@ -384,6 +385,32 @@ export const PERSONAL_PROJECTS: PersonalProject[] = [
         ],
       },
     ] satisfies ArchLayer[],
+  },
+  {
+    name: "Checkout Kit",
+    tagline: "Provider-agnostic payment orchestration",
+    description:
+      "An open-source set of TypeScript packages for building one checkout flow across Stripe, Adyen, PayPal, " +
+      "and custom providers. It handles payment steps, safe retries, redirects, 3-D Secure, and recovery after " +
+      "a return or page reload, with a headless core and optional React UI. Packages are published on npm.",
+    url: "https://github.com/pavel-labs/checkout-kit",
+    status: ProjectStatus.Live,
+    githubRepo: "pavel-labs/checkout-kit",
+    relatedLinks: [
+      {
+        label: "Documentation",
+        url: "https://pavel-labs.github.io/checkout-kit/",
+      },
+    ],
+    tags: [
+      "TypeScript",
+      "Payments",
+      "Stripe",
+      "Adyen",
+      "PayPal",
+      "React",
+      "Open Source",
+    ],
   },
   {
     name: "Space View",
